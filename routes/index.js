@@ -6,7 +6,7 @@ const roomRouter = require('./room');
 const staffRouter = require('./staff');
 
 const router = (app) => {
-    app.use('/v1/auth', authRouter);
+    app.use('/v1/api/auth', authRouter);
     app.use('/v1/api/category', categoryRouter);
     app.use('/v1/api/account', accountRouter);
     app.use('/v1/api/supplies', suppliesRouter);
