@@ -5,8 +5,6 @@ const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const router = require('./routes/index');
-const serverless = require('serverless-http');
-const { Router } = require("express");
 
 const app = express();
 app.use(cors({ origin:true, credentials:true }));
@@ -23,15 +21,7 @@ mongoose
 
 router(app);
 
-const router = Router();
-router.get("/hello", (req, res) => res.send("Hello World!"));
-
-app.use("/api/", router);
-
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 })
-
-module.exports = app;
-module.exports.handler = serverless(app);
