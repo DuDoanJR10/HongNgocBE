@@ -4,7 +4,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const router = require('./routes/index');
+// const router = require('./routes/index');
 const serverless = require('serverless-http');
 const { Router } = require("express");
 
@@ -21,7 +21,7 @@ mongoose
     .then(() => console.log('Connected to MongoDB'))
     .catch(error => console.log(error))
 
-router(app);
+// router(app);
 
 const router = Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
